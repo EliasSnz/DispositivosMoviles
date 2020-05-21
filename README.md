@@ -1,4 +1,4 @@
-# postsapp
+# Post App
 
 A new Flutter application.
 
