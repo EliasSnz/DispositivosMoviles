@@ -1,36 +1,36 @@
 class CommentsClass {
-  List<Comment> comment;
+  List<Comments> comments;
 
-  CommentsClass({this.comment});
+  CommentsClass({this.comments});
 
   CommentsClass.fromJson(Map<String, dynamic> json) {
-    if (json['comment'] != null) {
-      comment = new List<Comment>();
-      json['comment'].forEach((v) {
-        comment.add(new Comment.fromJson(v));
+    if (json['comments'] != null) {
+      comments = new List<Comments>();
+      json['comments'].forEach((v) {
+        comments.add(new Comments.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.comment != null) {
-      data['comment'] = this.comment.map((v) => v.toJson()).toList();
+    if (this.comments != null) {
+      data['comments'] = this.comments.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Comment {
+class Comments {
   int postId;
   int id;
   String name;
   String email;
   String body;
 
-  Comment({this.postId, this.id, this.name, this.email, this.body});
+  Comments({this.postId, this.id, this.name, this.email, this.body});
 
-  Comment.fromJson(Map<String, dynamic> json) {
+  Comments.fromJson(Map<String, dynamic> json) {
     postId = json['postId'];
     id = json['id'];
     name = json['name'];
